@@ -1,7 +1,7 @@
 .PHONY: build clean tool lint help
 all: build
 
-# $Env:GOOS = "e" $Env:GOOS = "darwin"
+# $Env:GOOS = "windows" $Env:GOOS = "darwin"
 # export GOOS=linux
 build:
 	go build -o dist/letscrum ./cmd/letscrum/

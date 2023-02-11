@@ -45,7 +45,7 @@ func (s *LetscrumService) SignIn(ctx context.Context, req *userv1.SignInRequest)
 		return nil, status.Error(codes.Unknown, err.Error())
 	}
 	if user.ID == 0 {
-		return nil, status.Error(codes.NotFound, "user not fount.")
+		return nil, status.Error(codes.NotFound, "user not fount or password not correct.")
 	}
 	accessToken, refreshToken, errGenTokens := utils.GenerateTokens(strconv.FormatInt(user.ID, 10), user.IsSuperAdmin)
 	if errGenTokens != nil {
